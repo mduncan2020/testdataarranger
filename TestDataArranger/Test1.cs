@@ -14,12 +14,12 @@ namespace TestDataArranger
             using (Arranger<Epic> epicArranger = new Arranger<Epic>())
             {
                 var epic = epicArranger.Create();
-                using (Arranger<UserStory> storyArranger = new Arranger<UserStory>())
+                using (Arranger<Story> storyArranger = new Arranger<Story>())
                 {
                     epic.Stories.Add(storyArranger.Create());
                     epic.Stories.Add(storyArranger.Create());
 
-                    var defect = new UserStory();
+                    var defect = new Story();
                     defect.IsDefect = true;
                     storyArranger.Create(defect);
                     epic.Stories.Add(defect);

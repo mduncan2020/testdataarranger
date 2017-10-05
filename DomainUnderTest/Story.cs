@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DomainUnderTest
 {
-    public class UserStory : WorkItemBase
+    public class Story : WorkItemBase
     {
         public ICollection<Task> Tasks { get; set; }
         public bool IsDefect { get; set; }
 
-        public UserStory()
+        public Story()
         {
             this.Tasks = new List<Task>();
         }

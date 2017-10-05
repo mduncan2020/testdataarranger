@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DomainUnderTest"
+                   namespace="DomainUnderTest">
+
+  <class name="Story">
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+    <property name="Title" />
+    <property name="Description" />
+    <property name="Start" />
+    <property name="End" />
+    <property name="IsDefect" />
+
+    <set name="Tasks">
+      <key column="StoryId"/>
+      <one-to-many class="DomainUnderTest.Task, Task"/>
+    </set>
+  </class>
+
+</hibernate-mapping>

@@ -8,11 +8,11 @@ namespace DomainUnderTest
 {
     public class Epic : WorkItemBase
     {
-        public ICollection<UserStory> Stories { get; set; }
+        public ICollection<Story> Stories { get; set; }
 
         public Epic()
         {
-            Stories = new List<UserStory>();
+            Stories = new List<Story>();
         }
 
         public int DefectCount

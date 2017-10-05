@@ -7,6 +7,7 @@ namespace DomainUnderTest
 {
     interface IWorkItem
     {
+        Guid Id { get; set; }
         string Title { get; set; }
         string Description { get; set; }
         DateTime? Start { get; set; }
