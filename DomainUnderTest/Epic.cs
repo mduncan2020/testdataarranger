@@ -10,9 +10,19 @@ namespace DomainUnderTest
     {
         public ICollection<Story> Stories { get; set; }
 
-        public Epic()
+        public Epic() : this(null, null, null, null)
+        {
+            
+        }
+
+        public Epic(string title, string description, DateTime? start, DateTime? end)
         {
             Stories = new List<Story>();
+
+            this.Title = title;
+            this.Description = description;
+            this.Start = start;
+            this.End = end;
         }
 
         public int DefectCount

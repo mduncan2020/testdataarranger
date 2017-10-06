@@ -49,10 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arranger.cs" />
+    <Compile Include="EpicArranger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainUnderTest\DomainUnderTest.csproj">
+      <Project>{a78bb7df-e267-4d32-9844-cf7ce30e955e}</Project>
+      <Name>DomainUnderTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

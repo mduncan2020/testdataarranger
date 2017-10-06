@@ -31,5 +31,29 @@ namespace TestDataArranger
                 }
             }
         }
+
+        [TestMethod]
+        public void Test2() //TODO rename
+        {
+            using (EpicArranger epicArranger = new EpicArranger())
+            {
+                var epic = epicArranger.CreateDefault();
+                using (Arranger<Story> storyArranger = new Arranger<Story>())
+                {
+                    epic.Stories.Add(storyArranger.Create());
+                    epic.Stories.Add(storyArranger.Create());
+
+                    var defect = new Story();
+                    defect.IsDefect = true;
+                    storyArranger.Create(defect);
+                    epic.Stories.Add(defect);
+                    var expected = 1;
+
+                    var result = epic.DefectCount;
+
+                    Assert.AreEqual(expected, result);
+                }
+            }
+        }
     }
 }
